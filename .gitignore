@@ -1,2 +1,5 @@
-
+# Configuration file
 .env
+
+# Dependencies
+node_modules

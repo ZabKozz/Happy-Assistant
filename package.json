@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/ZabKozz/Vollie/issues"
   },
-  "homepage": "https://github.com/ZabKozz/Vollie#readme"
+  "homepage": "https://github.com/ZabKozz/Vollie#readme",
+  "dependencies": {
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1"
+  }
 }
