@@ -1,0 +1,24 @@
+{
+  "name": "vollie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZabKozz/Vollie.git"
+  },
+  "author": "ZabKoz",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ZabKozz/Vollie/issues"
+  },
+  "homepage": "https://github.com/ZabKozz/Vollie#readme"
+}
