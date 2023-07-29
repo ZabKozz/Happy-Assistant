@@ -6,6 +6,8 @@ const lolcatjs = require('lolcatjs');
 module.exports = {
     name: "ready",
     once: true,
+    author: 'ZabKoz',
+    version: '1.0.0',
 
     execute(client) {
         // Cleaning the console
