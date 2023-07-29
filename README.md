@@ -12,15 +12,18 @@ For the time being, no
 <img src="./content/#">[For the time being, no]
 
 ## 🚀 Installation / Setup
-For the time being, no
+Head over to the Docs to find all the instructions for setting up and running Discord BOT Vollie - V1. This can be found [here!](https://github.com/ZabKozz/Vollie/docs/INSTALLATION.MD) 
 #### ⌚ Installing Requirements
-For the time being, no
-
-#### 🖥️ Setting up BOT
-For the time being, no
+Download the latest version from [Releases](ttps://github.com/ZabKozz/Vollie/releases), open up the root directory and run the following command.
+```bash
+npm install
+```
 
 #### 📡 Starting the application 
-For the time being, no
+Open up the root directory and run the following command.
+```bash
+npm run start
+```
 
 ## 🧰 Features
 * For the time being, no
