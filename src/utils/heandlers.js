@@ -2,7 +2,8 @@ const chalk = require('chalk');
 // Function responsible for loading events
 async function loadEvents(client) {
     // Addition of a function responsible for searching for files
-    const { loadFiles, capitalizeFirstLetter } = require('./functions');
+    const loadFiles = require('./functions/loadFiles');
+    const capitalizeFirstLetter = require('./functions/capitalizeFirstLetter');
     // Removal of the customer event collection
     await client.events.clear();
     // Event files saving variable
@@ -31,7 +32,8 @@ async function loadEvents(client) {
 // Function responsible for loading commands
 async function loadCommand(client) {
     // Addition of a function responsible for searching for files
-    const { loadFiles, capitalizeFirstLetter } = require('./functions');
+    const loadFiles = require('./functions/loadFiles');
+    const capitalizeFirstLetter = require('./functions/capitalizeFirstLetter');
     // Removal of the customer commands collection
     await client.commands.clear();
     // Removal of the customer aliases collection
