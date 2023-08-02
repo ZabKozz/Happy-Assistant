@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        <%=bot.user.username%>
+    </title>
+    <link href="../home/style.css" rel="stylesheet" />
+</head>
+
+<body class="relative antialiased tracking-tight text-gray-500 bg-black font-inter">
+    <div class="absolute inset-0 bg-top bg-no-repeat bg-illustration-01"></div>
+    <div class="absolute inset-0 bg-center bg-no-repeat bg-illustration-02"></div>
+    <div class="container relative">
+        <div class="flex items-center justify-between py-6">
+            <a href="/home" class = "h-1 w-1">
+                <img class="block h-8 w-8 rounded-full" src="<%=avatar%>" alt="" />
+            </a>
+            <div class="flex items-center mb-4 md:block">
+                <a class="mr-8 font-semibold hover:text-white" href="/commands">Commands</a>
+                <% if (user===null) { %>
+                    <a class="bg-indigo-600 btn hover:bg-indigo-500" href="/login/api">Sign up</a>
+                <% } else { %>
+                    <a class="bg-indigo-600 btn hover:bg-indigo-500" href="dashboard"><%=user.username%></a>
+                <% } %>
+            </div>
+        </div>
+        <h1 class="px-8 mt-16 mb-4 text-5xl font-extrabold leading-tight text-center text-white xl:text-6xl">
+            <span class="text-indigo-700">
+                <%=bot.user.username%>
+            </span>
+        </h1>
+        <p class="max-w-xl mx-auto mb-8 text-xl text-center xl:max-w-2xl">
+            <%=bot.user.username%> is a multi-purpose discord bot ready to skill up and boost up your Discord server
+        </p>
+        <div class="flex flex-col justify-center max-w-xs mx-auto mb-12 sm:max-w-full sm:flex-row">
+            <a class="w-full mb-4 whitespace-no-wrap bg-indigo-600 btn btn-tall md:w-auto hover:bg-indigo-500 sm:mr-2"
+                href="/invite">
+                <i class="fab fa-discord fa-2x"></i>Invite
+            </a>
+            <% if (user===null) { %>
+                <a class="w-full mb-4 whitespace-no-wrap bg-gray-800 btn btn-tall md:w-auto hover:bg-gray-600 sm:ml-2"
+                    href="/login/api">
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i>Dashboard
+                </a>
+
+                <% } else { %>
+                    <a class="w-full mb-4 whitespace-no-wrap bg-gray-800 btn btn-tall md:w-auto hover:bg-gray-600 sm:ml-2"
+                        href="/dashboard">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>Dashboard
+                    </a>
+                    <% } %>
+        </div>
+        <div class="mb-16">
+            <img class="block w-full max-w-5xl mx-auto rounded" src="./home/img/Discord-banner.jpg" alt="" />
+        </div>
+        <div>
+            <h4 class="title sm:text-4xl md:text-5xl">
+                With <%=bot.user.username%>, you can fully customise your discord experience!
+                    </h4>
+                    <ul
+                        class="flex flex-col flex-wrap justify-center mb-20 text-center border-b border-gray-900 sm:flex-row">
+                        <li class="w-full px-6 mb-8 sm:mb-16 md:w-1/2 lg:w-1/3">
+                            <span
+                                class="flex items-center justify-center w-16 h-16 mx-auto mb-4 text-3xl text-white bg-indigo-700 rounded-full">
+                                <svg class="w-7 h-7 text-gray-800 dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm.524 5.61a.5.5 0 0 1 .4-.34l1.122-.164.5-1.016a.521.521 0 0 1 .9 0l.5 1.016 1.122.164a.5.5 0 0 1 .277.853l-.812.791.192 1.116a.5.5 0 0 1-.725.528l-1-.528-1 .528a.5.5 0 0 1-.725-.528l.192-1.116-.812-.791a.5.5 0 0 1-.131-.513Zm-6 0a.5.5 0 0 1 .4-.34l1.126-.164.5-1.016a.521.521 0 0 1 .9 0l.5 1.016 1.122.164a.5.5 0 0 1 .277.853l-.812.791.192 1.116A.5.5 0 0 1 8 9.058L7 8.53l-1 .528a.5.5 0 0 1-.725-.528l.192-1.116-.812-.791a.5.5 0 0 1-.131-.513ZM10 16c-3.047 0-5.5-2.735-5.5-5h1a11.7 11.7 0 0 0 4.5.583c2.614 0 4.308-.391 4.524-.673l.976.09c0 2.265-2.453 5-5.5 5Z" />
+                                </svg>
+                            </span>
+                            <h3 class="mb-2 text-2xl font-bold text-white">Great variety of commands</h3>
+                            <p class="max-w-xs mx-auto text-lg text-gray-500">
+                                Our bot has a very large range of commands, take your server to the next level!
+                            </p>
+                        </li>
+                        <li class="w-full px-6 mb-8 sm:mb-16 md:w-1/2 lg:w-1/3">
+                            <span
+                                class="flex items-center justify-center w-16 h-16 mx-auto mb-4 text-3xl text-white bg-indigo-700 rounded-full">
+                                <svg class="w-7 h-7 text-gray-800 dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                                    <path
+                                        d="m17.351 3.063-8-3a1.009 1.009 0 0 0-.7 0l-8 3A1 1 0 0 0 0 4a19.394 19.394 0 0 0 8.47 15.848 1 1 0 0 0 1.06 0A19.394 19.394 0 0 0 18 4a1 1 0 0 0-.649-.937Zm-3.644 4.644-5 5A1 1 0 0 1 8 13c-.033 0-.065 0-.1-.005a1 1 0 0 1-.733-.44l-2-3a1 1 0 0 1 1.664-1.11l1.323 1.986 4.138-4.138a1 1 0 0 1 1.414 1.414h.001Z" />
+                                </svg>
+                            </span>
+                            <h3 class="mb-2 text-2xl font-bold text-white">Security</h3>
+                            <p class="max-w-xs mx-auto text-lg text-gray-500">
+                                Take advantage of our high-quality filters to protect your channels from spammers and
+                                bad people. We will keep your channels clean and cosy.
+                            </p>
+                        </li>
+                        <li class="w-full px-6 mb-8 sm:mb-16 md:w-1/2 lg:w-1/3">
+                            <span
+                                class="flex items-center justify-center w-16 h-16 mx-auto mb-4 text-3xl text-white bg-indigo-700 rounded-full">
+                                <svg class="w-7 h-7 text-gray-800 dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z" />
+                                </svg>
+                            </span>
+                            <h3 class="mb-2 text-2xl font-bold text-white">Level system</h3>
+                            <p class="max-w-xs mx-auto text-lg text-gray-500">
+                                Users can receive XP points for writing messages, Show the most active people in the
+                                server ranking.
+                            </p>
+                        </li>
+                    </ul>
+        </div>
+        <div class="flex flex-col justify-between mb-8 text-center sm:flex-row">
+            <p class="order-last mb-4 text-sm text-gray-500 sm:order-first">
+                ©
+                <script>
+                    document.write(new Date().getFullYear() + ",");
+                </script> made by
+                <a href="https://github.com/ZabKozz" class="text-white">ZabKoz</a>
+            </p>
+            <ul class="flex flex-row justify-center mb-6 -ml-4 -mr-4 text-sm">
+                <li>
+                    <a href="#" class="px-4 text-gray-500 hover:text-white">Contact</a>
+                </li>
+                <li>
+                    <a href="#" class="px-4 text-gray-500 hover:text-white">About us</a>
+                </li>
+                <li>
+                    <a href="#" class="px-4 text-gray-500 hover:text-white">FAQ's</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

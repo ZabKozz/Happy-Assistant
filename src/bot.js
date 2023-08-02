@@ -1,5 +1,3 @@
-// Module responsible for env configuration operation
-require('dotenv').config();
 // Discord.js package
 const {Client, GatewayIntentBits, Collection} = require('discord.js');
 // File responsible for loading events and commands
