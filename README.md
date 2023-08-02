@@ -9,12 +9,12 @@
 For the time being, no
 
 # 👀Dashboard Preview:
-<img src="./content/#">[For the time being, no]
+<img src="./content/Website/Dashboard.png">
 
 ## 🚀 Installation / Setup
 Head over to the Docs to find all the instructions for setting up and running Discord BOT Vollie - V1. This can be found [here!](https://github.com/ZabKozz/Vollie/blob/main/docs/INSTALLATION.MD) 
 #### ⌚ Installing Requirements
-Download the latest version from [Releases](ttps://github.com/ZabKozz/Vollie/releases), open up the root directory and run the following command.
+Download the latest version from [Releases](https://github.com/ZabKozz/Vollie/releases), open up the root directory and run the following command.
 ```bash
 npm install
 ```
