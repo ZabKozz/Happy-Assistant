@@ -1,5 +1,9 @@
 // Discord.js package
-const {Client, GatewayIntentBits, Collection} = require('discord.js');
+const { 
+    Client,
+    GatewayIntentBits,
+    Collection,
+} = require('discord.js');
 // File responsible for loading events and commands
 const { loadEvents, loadCommand } = require('./utils/heandlers');
 // Initialize client
@@ -25,6 +29,6 @@ loadEvents(client);
 // Command loading function
 loadCommand(client);
 // Initiation of client login
-client.login(process.env.client_Token);
+//client.login(process.env.client_Token);
 // Export client
 exports.client = client;
