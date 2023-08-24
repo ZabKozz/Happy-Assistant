@@ -1,6 +1,6 @@
 version: '3'
-
 services:
+  # Discord bot service
   app:
     container_name: vollie
     build:
@@ -12,6 +12,3 @@ services:
       - '8080:8080'
       - '80:80'
     restart: unless-stopped
-
-volumes:
-  vollie-app: {}

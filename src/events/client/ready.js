@@ -1,5 +1,6 @@
 const chalk = require('chalk');
 const vers = require('../../config/version.json');
+const { loadGuilds } = require('../../utils/functions/mongoose/loadGuilds');
 var figlet = require('figlet');
 const lolcatjs = require('lolcatjs');
 
@@ -7,7 +8,7 @@ module.exports = {
     name: "ready",
     once: true,
     author: 'ZabKoz',
-    version: '1.0.1',
+    version: '1.0.2',
 
     execute(client) {
         // Cleaning the console
@@ -24,14 +25,18 @@ module.exports = {
         // Display of the rest of the information
         console.log(chalk.bold.green('Launched Succesfully...'));
         // Information about the bot version
-        console.log(chalk.magenta('Version:'),chalk.cyan(`${vers.ver}`));
+        console.log(chalk.magenta('Version:'), chalk.cyan(`${vers.ver}`));
         // Information about who created the bot
-        console.log(chalk.magenta('Made by:'),chalk.cyan('ZabKoz'));
+        console.log(chalk.magenta('Made by:'), chalk.cyan('ZabKoz'));
         // Information about the bot prefix
-        console.log(chalk.magenta('Prefix:'),chalk.cyan(`${process.env.client_Prefix}\n`));
+        console.log(chalk.magenta('Prefix:'), chalk.cyan(`${process.env.client_Prefix}\n`));
         // Information about the logged-in bot and the name
-        console.log(chalk.green(chalk.bold(`${client.user.username}`),`is online!`));
+        console.log(chalk.green(chalk.bold(`${client.user.username}`), `is online!`));
         // Comming soon
-        console.log(chalk.green(chalk.bold(`Dashboard:`),`http://localhost:`+process.env.web_Port));
+        console.log(chalk.green(chalk.bold(`Dashboard:`), `http://localhost:` + process.env.web_Port));
+        // 
+        loadGuilds(client);
+        // Database connection information
+        client.mongoose.init()
     }
 }
