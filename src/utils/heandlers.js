@@ -26,7 +26,7 @@ async function loadEvents(client) {
             client.on(event.name, execute);
         }
         // Display that an event has been saved and is running
-        return console.log(chalk.green(`[+]`), (chalk.gray(capitalizeFirstLetter(event.name))));
+        return console.log(`[${chalk.green.bold('Event')}]`, (chalk.gray(capitalizeFirstLetter(event.name))));
     });
 };
 // Function responsible for loading commands
@@ -51,7 +51,7 @@ async function loadCommand(client) {
             client.aliases.set(alias, command.help.name);
         });
         // Display that the command has been added and is runnable
-        return console.log(chalk.green(`[+]`), (chalk.gray(capitalizeFirstLetter(command.help.name))));
+        return console.log(`[${chalk.green.bold('Cmd')}]`, (chalk.gray(capitalizeFirstLetter(command.help.name))));
     });
 }
 

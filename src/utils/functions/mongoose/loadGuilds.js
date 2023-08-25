@@ -1,7 +1,8 @@
 const GuildConfig = require('../../../models/guild');
+const chalk = require('chalk');
 
 async function loadGuilds(client) {
-
+    //
     const guilds = client.guilds.cache.map(guild => {
         return guild;
     });
@@ -16,7 +17,7 @@ async function loadGuilds(client) {
             //
             client.configs.set(guildID, guildConfigDB);
             //
-            console.log('Set configs', guild.id);
+            console.log(`[${chalk.green.bold('Config')}]`, chalk.gray('Guild configurations uploaded:', guildID));
             //
         } else {
             //
@@ -32,10 +33,13 @@ async function loadGuilds(client) {
                 ownerID: guild.ownerId,
             });
             //
-            await guildConfigDB.save()
+            await guildConfigDB.save().then(guildID => {
+                console.log(`[${chalk.green.bold('Config')}]`, chalk.gray('New guild configuration added:', guild.id));
+            })
+
         }
     }
-    // console.log(client.configs)
+    console.log(`[${chalk.blue.bold('Config')}]`, chalk.gray('Saved guild configurations:', chalk.blue(client.configs.size)));
 }
 
 module.exports = { loadGuilds };

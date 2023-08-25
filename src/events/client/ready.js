@@ -23,17 +23,17 @@ module.exports = {
         // Displaying a banner with a name
         lolcatjs.fromString(banner);
         // Display of the rest of the information
-        console.log(chalk.bold.green('Launched Succesfully...'));
+        console.log(`[${chalk.blue('Client')}]`, chalk.bold.green('Launched Succesfully...'));
         // Information about the bot version
-        console.log(chalk.magenta('Version:'), chalk.cyan(`${vers.ver}`));
+        console.log(`[${chalk.blue('Client')}]`,chalk.magenta('Version:'), chalk.cyan(`${vers.ver}`));
         // Information about who created the bot
-        console.log(chalk.magenta('Made by:'), chalk.cyan('ZabKoz'));
+        console.log(`[${chalk.blue('Client')}]`,chalk.magenta('Made by:'), chalk.cyan('ZabKoz'));
         // Information about the bot prefix
-        console.log(chalk.magenta('Prefix:'), chalk.cyan(`${process.env.client_Prefix}\n`));
+        console.log(`[${chalk.blue('Client')}]`,chalk.magenta('Prefix:'), chalk.cyan(`${process.env.client_Prefix}\n`));
         // Information about the logged-in bot and the name
-        console.log(chalk.green(chalk.bold(`${client.user.username}`), `is online!`));
+        console.log(`[${chalk.blue('Client')}]`,chalk.green(chalk.bold(`${client.user.username}`), `is online!`));
         // Comming soon
-        console.log(chalk.green(chalk.bold(`Dashboard:`), `http://localhost:` + process.env.web_Port));
+        console.log(`[${chalk.blue('Website')}]`,chalk.green(chalk.bold(`Dashboard:`), `http://localhost:` + process.env.web_Port));
         // 
         loadGuilds(client);
         // Database connection information

@@ -13,12 +13,12 @@ module.exports = {
         //useFindAndModify: false
       })
       .then(() => {
-        console.log(chalk.green(chalk.bold(`Mongodb:`), 'connected'))
+        // console.log(`[${chalk.green.bold('MongoDB')}]`,chalk.gray(`connected`));
       })
       .catch(err => console.log(err.message));
 
     mongoose.connection.on('connected', () => {
-      console.log(chalk.green(chalk.bold(`Mongodb:`), 'connected to db'))
+      console.log(`[${chalk.green.bold('MongoDB')}]`,chalk.gray(`Connected to the database`));
     });
 
     mongoose.connection.on('error', err => {
@@ -26,12 +26,12 @@ module.exports = {
     });
 
     mongoose.connection.on('disconnected', () => {
-      console.log(chalk.red(chalk.bold(`Mongodb:`), 'connection is disconnected'))
+      console.log(`[${chalk.red.bold('MongoDB')}]`,chalk.gray(`Disconnected from the database`));
     });
 
     process.on('SIGINT', () => {
       mongoose.connection.close(() => {
-        console.log(chalk.red(chalk.bold(`Mongodb:`), 'connection is disconnected due to app termination'))
+        console.log(`[${chalk.red.bold('MongoDB')}]`,chalk.gray(`Connection is disconnected due to app termination`));
         process.exit(0);
       });
     });
