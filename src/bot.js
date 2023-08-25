@@ -9,7 +9,6 @@ const {
     loadEvents,
     loadCommand
 } = require('./utils/heandlers');
-// Guild model //
 // Initialize client
 const client = new Client({
     intents: [
@@ -28,13 +27,12 @@ client.mongoose = require('./utils/database');
 client.events = new Collection();
 // Command collection
 client.commands = new Collection();
-// Aliases collection
-client.aliases = new Collection();
+// Guild Configs collection
 client.configs = new Collection()
-// Events loading function
-loadEvents(client);
 // Command loading function
 loadCommand(client);
+// Events loading function
+loadEvents(client);
 // Initiation of client login
 client.login(process.env.client_Token);
 // Export client

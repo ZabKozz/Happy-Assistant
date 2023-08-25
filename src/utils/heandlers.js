@@ -1,4 +1,5 @@
 const chalk = require('chalk');
+const { REST, Routes } = require('discord.js');
 // Function responsible for loading events
 async function loadEvents(client) {
     // Addition of a function responsible for searching for files
@@ -17,13 +18,13 @@ async function loadEvents(client) {
         // Saving of the customer event collection
         client.events.set(event.name, execute);
         // Checking whether an event works on or once
-        if(event.rest) {
-            if(event.once) client.rest.once(event.name, execute);
+        if (event.rest) {
+            if (event.once) client.rest.once(event.name, execute);
             else client.rest.on(event.name, execute);
         } else {
-            if(event.once) client.once(event.name, execute);
+            if (event.once) client.once(event.name, execute);
             else
-            client.on(event.name, execute);
+                client.on(event.name, execute);
         }
         // Display that an event has been saved and is running
         return console.log(`[${chalk.green.bold('Event')}]`, (chalk.gray(capitalizeFirstLetter(event.name))));
@@ -36,23 +37,22 @@ async function loadCommand(client) {
     const capitalizeFirstLetter = require('./functions/capitalizeFirstLetter');
     // Removal of the customer commands collection
     await client.commands.clear();
-    // Removal of the customer aliases collection
-    await client.aliases.clear();
-    // Commands files saving variable
+    //
     const Files = await loadFiles('/src/commands');
     // Loop responsible for adding commands
     Files.forEach((file) => {
+
         // Command file saving variable
         const command = require(file);
-        // Loop responsible for adding command to the collection
-        client.commands.set(command.help.name, command);
-        // Loop responsible for adding aliases to the collection
-        command.help.aliases.forEach(alias => {
-            client.aliases.set(alias, command.help.name);
-        });
+        if (!command.name) {
+            // Display of information that the command name is not specified 
+            return console.log(`[${chalk.red.bold('Command')}]`,chalk.gray('No command name given please go to file:'), file);
+        }
+        // Saving command data in the "client.commands" collection
+        client.commands.set(command.name, command);
         // Display that the command has been added and is runnable
-        return console.log(`[${chalk.green.bold('Cmd')}]`, (chalk.gray(capitalizeFirstLetter(command.help.name))));
+        return console.log(`[${chalk.green.bold('Command')}]`, (chalk.gray(capitalizeFirstLetter(command.name))));
     });
 }
-
-module.exports = {loadEvents, loadCommand};
+// Exporting all functions
+module.exports = { loadEvents, loadCommand };
