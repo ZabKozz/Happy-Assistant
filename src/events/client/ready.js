@@ -13,7 +13,7 @@ module.exports = {
 
     execute(client) {
         // Cleaning the console
-        console.clear();
+        //console.clear();
         // Creating a banner with the bot's name and version
         var banner = figlet.textSync(`Discord BOT Vollie V${vers.ver}`, {
             font: 'Small',

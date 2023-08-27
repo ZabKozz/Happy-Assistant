@@ -34,7 +34,7 @@ client.events = new Collection();
 // Command collection
 client.commands = new Collection();
 // Guild Configs collection
-client.configs = new Collection()
+client.configs = new Map()
 // Command loading function
 loadCommand(client);
 // Events loading function

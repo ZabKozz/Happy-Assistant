@@ -8,18 +8,9 @@ const guildSchema = mongoose.Schema({
         unique: true,
     },
     ownerID: String,
-    prefix: {
+    levelToogle: {
         type: String,
-        require: true,
-        default: defaults.prefix,
-    },
-    welcomeChannel: {
-        type: String,
-        default: defaults.welcomeChannel,
-    },
-    welcomeMsg: {
-        type: String,
-        default: defaults.welcomeMsg,
+        default: defaults.levelToogle,
     },
 });
 
