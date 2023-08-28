@@ -1,8 +1,8 @@
 {
-  "name": "vollie",
+  "name": "happy-assistant",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "Main.js",
   "directories": {
     "doc": "docs"
   },
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZabKozz/Vollie.git"
+    "url": "git+https://github.com/ZabKozz/happy-assistant.git"
   },
   "author": "ZabKoz",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ZabKozz/Vollie/issues"
+    "url": "https://github.com/ZabKozz/happy-assistantlie/issues"
   },
-  "homepage": "https://github.com/ZabKozz/Vollie#readme",
+  "homepage": "https://github.com/ZabKozz/happy-assistant/docs#readme",
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "chalk": "^4.1.2",
@@ -37,6 +37,7 @@
     "figlet": "^1.6.0",
     "glob": "^7.2.0",
     "lolcatjs": "^2.4.1",
+    "module-alias": "^2.2.3",
     "mongoose": "^7.4.1",
     "nodemon": "^3.0.1",
     "passport": "^0.6.0",
@@ -49,5 +50,10 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.3.3"
+  },
+  "_moduleAliases": {
+    "@bot": "./src/bot/",
+    "@config": "./src/config/",
+    "@models": "./src/bot/database/models/"
   }
 }
