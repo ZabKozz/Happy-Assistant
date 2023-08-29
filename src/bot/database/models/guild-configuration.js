@@ -12,6 +12,18 @@ const guildSchema = mongoose.Schema({
         type: String,
         default: defaults.levelToogle,
     },
+    anti_linkToogle: {
+        type: String,
+        default: defaults.anti_linkToogle,
+    },
+    anti_linkPermission: {
+        type: String,
+        default: defaults.anti_linkPermission,
+    },
+    anti_linkMessage: {
+        type: String,
+        default: defaults.anti_linkMessage,
+    },
 });
 
 module.exports = mongoose.model('Guild', guildSchema);
