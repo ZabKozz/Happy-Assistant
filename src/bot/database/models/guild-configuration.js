@@ -12,6 +12,10 @@ const guildSchema = mongoose.Schema({
         type: String,
         default: defaults.levelToogle,
     },
+    levelChannel: {
+        type: String,
+        default: defaults.levelChannel,
+    },
     anti_linkToogle: {
         type: String,
         default: defaults.anti_linkToogle,
