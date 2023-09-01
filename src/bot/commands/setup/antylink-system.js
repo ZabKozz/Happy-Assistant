@@ -5,7 +5,9 @@ const ec = require('@config/embed');
 module.exports = {
     name: 'anti-link',
     description: '🔐 | Anti-link system',
-    version: '1.0.0',
+    botPermissions: [""],
+    userPermissions: ["ManageGuild"],
+    version: '1.0.1',
     options: [
         {
             name: "setup",

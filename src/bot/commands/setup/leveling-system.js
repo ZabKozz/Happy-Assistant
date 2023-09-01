@@ -5,6 +5,9 @@ const ec = require('@config/embed');
 module.exports = {
     name: 'leveling',
     description: '🔐 | Leveling system',
+    botPermissions: [""],
+    userPermissions: ["ManageGuild"],
+    version: '1.0.1',
     options: [
         {
             name: "setup",

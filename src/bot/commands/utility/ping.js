@@ -4,7 +4,9 @@ const ec = require('@config/embed');
 module.exports = {
     name: 'ping',
     description: '🏓 | Return Bot Latencies',
-
+    botPermissions: [""],
+    userPermissions: ["ManageGuild"],
+    version: '1.0.1',
     execute(interaction, client) {
         let circles = {
             green: "🟢",
