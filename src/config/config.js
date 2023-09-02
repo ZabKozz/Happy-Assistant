@@ -1,10 +1,14 @@
 module.exports = {
     defaultSettings: {
-        levelToogle: false,
-        levelChannel: 'none',
-        anti_linkToogle: false,
-        anti_linkPermission: 'Administrator',
-        anti_linkMessage: 'Hey {user}! Unfortunately such links are not allowed here!',
+        // Basic configuration of the leveling system
+        leveling: {
+            levelChannel: 'none',
+        },
+        // Basic configuration of the anti-link system
+        autoMod: {
+            anti_linksPermission: 'Administrator',
+            anti_linksMessage: 'Hey {user}! Unfortunately such links are not allowed here!',
+        }
     },
     defaultleveling: {
         xp: 0,

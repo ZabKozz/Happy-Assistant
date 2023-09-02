@@ -7,26 +7,36 @@ const guildSchema = mongoose.Schema({
         require: true,
         unique: true,
     },
-    ownerID: String,
-    levelToogle: {
-        type: String,
-        default: defaults.levelToogle,
+    guildInformation: {
+        name: String,
+        region: String,
+        owner: { type: String, ref: "users" },
+        joinedAt: Date,
+        leftAt: Date,
     },
-    levelChannel: {
-        type: String,
-        default: defaults.levelChannel,
+    leveling: {
+        enabled: {
+            type: Boolean,
+            default: false
+        },
+        channel: {
+            type: String,
+            default: defaults.leveling.levelChannel,
+        }
     },
-    anti_linkToogle: {
-        type: String,
-        default: defaults.anti_linkToogle,
-    },
-    anti_linkPermission: {
-        type: String,
-        default: defaults.anti_linkPermission,
-    },
-    anti_linkMessage: {
-        type: String,
-        default: defaults.anti_linkMessage,
+    autoMod: {
+        anti_links: {
+            type: Boolean,
+            default: false
+        },
+        anti_links_Premissions: {
+            type: String,
+            default: defaults.autoMod.anti_linksPermission,
+        },
+        anti_links_Message: {
+            type: String,
+            default: defaults.autoMod.anti_linksMessage,
+        }
     },
 });
 

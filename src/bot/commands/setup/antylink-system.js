@@ -5,9 +5,9 @@ const ec = require('@config/embed');
 module.exports = {
     name: 'anti-link',
     description: '🔐 | Anti-link system',
-    botPermissions: [""],
-    userPermissions: ["ManageGuild"],
-    version: '1.0.1',
+    botPermissions: [''],
+    userPermissions: ['ManageGuild'],
+    version: '1.0.2',
     options: [
         {
             name: "setup",
@@ -89,7 +89,7 @@ module.exports = {
             //
             const guildSettings = client.configs.get(interaction.guild.id);
             //
-            guildSettings.anti_linkToogle = Toogle;
+            guildSettings.autoMod.anti_links = Toogle;
             //
             client.configs.set(interaction.guild.id, guildSettings);
             //
@@ -152,11 +152,11 @@ module.exports = {
         }
         //
         async function displayStatus(interaction, client) {
-            const { anti_linkToogle, anti_linkPermission, anti_linkMessage } = client.configs.get(interaction.guild.id);
+            const { autoMod } = client.configs.get(interaction.guild.id);
             //
             const checkEmbed = new EmbedBuilder()
             //
-            if (anti_linkToogle === 'true' || anti_linkToogle === 'True') {
+            if (autoMod.anti_links === true) {
                 checkEmbed.setColor(ec.green)
             }
             else {
@@ -168,17 +168,17 @@ module.exports = {
             checkEmbed.addFields(
                 {
                     name: "Enabled:",
-                    value: `${anti_linkToogle}`,
+                    value: `${autoMod.anti_links}`,
                     inline: true
                 },
                 {
                     name: "NeedPremission:",
-                    value: `${anti_linkPermission}`,
+                    value: `${autoMod.anti_links_Premissions}`,
                     inline: true
                 },
                 {
                     name: "Message:",
-                    value: `${anti_linkMessage}`, inline: true
+                    value: `${autoMod.anti_links_Message}`, inline: true
                 }
             )
             checkEmbed.setFooter({ text: ` • Requested by ${interaction.user.globalName}`, iconURL: client.user.displayAvatarURL() })

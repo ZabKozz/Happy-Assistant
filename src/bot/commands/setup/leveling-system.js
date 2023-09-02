@@ -5,9 +5,9 @@ const ec = require('@config/embed');
 module.exports = {
     name: 'leveling',
     description: '🔐 | Leveling system',
-    botPermissions: [""],
-    userPermissions: ["ManageGuild"],
-    version: '1.0.1',
+    botPermissions: [''],
+    userPermissions: ['ManageGuild'],
+    version: '1.0.2',
     options: [
         {
             name: "setup",
@@ -63,7 +63,7 @@ module.exports = {
             //
             const guildSettings = client.configs.get(interaction.guild.id);
             //
-            guildSettings.levelToogle = Toogle;
+            guildSettings.leveling.enabled = Toogle;
             //
             client.configs.set(interaction.guild.id, guildSettings);
             //
@@ -91,7 +91,7 @@ module.exports = {
             //
             const guildSettings = client.configs.get(interaction.guild.id);
             //
-            guildSettings.levelChannel = channel.id;
+            guildSettings.leveling.channel = channel.id;
             //
             client.configs.set(interaction.guild.id, guildSettings);
             //
@@ -107,11 +107,11 @@ module.exports = {
         }
         //
         async function displayStatus(interaction, client) {
-            const { levelToogle, levelChannel } = client.configs.get(interaction.guild.id);
+            const { leveling } = client.configs.get(interaction.guild.id);
             //
             const checkEmbed = new EmbedBuilder()
             //
-            if (levelToogle === 'true' || levelToogle === 'True') {
+            if (leveling.enabled === true) {
                 checkEmbed.setColor(ec.green)
             }
             else {
@@ -123,12 +123,12 @@ module.exports = {
             checkEmbed.addFields(
                 {
                     name: "Enabled:",
-                    value: `${levelToogle}`,
+                    value: `${leveling.enabled}`,
                     inline: true
                 },
                 {
                     name: "Message channel:",
-                    value: `${levelChannel}`,
+                    value: `${leveling.channel}`,
                     inline: true
                 },
             )

@@ -25,14 +25,24 @@ async function loadGuilds(client) {
             // Storage of basic server data such as id and owner id
             const newGuild = {
                 guildID: guild.id,
-                ownerID: guild.ownerID,
+                guildInformation: {
+                    name: guild.name,
+                    region: guild.preferredLocale,
+                    owner: guild.ownerId,
+                    joinedAt: guild.joinedAt,
+                },
             };
             // Saving the server in the "clinet.configs" collection
             client.configs.set(guildID, newGuild);
             // Creating a new server in the database
             const guildConfigDB = await GuildConfig.create({
                 guildID: guild.id,
-                ownerID: guild.ownerId,
+                guildInformation: {
+                    name: guild.name,
+                    region: guild.preferredLocale,
+                    owner: guild.ownerId,
+                    joinedAt: guild.joinedAt,
+                },
             });
             // Saving the new server in the database
             await guildConfigDB.save().then(guildID => {

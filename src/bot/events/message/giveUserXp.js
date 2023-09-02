@@ -11,9 +11,9 @@ module.exports = {
 client.on('messageCreate', async (message) => {
     if (!message.inGuild() || message.author.bot) return
     //
-    const { levelToogle } = client.configs.get(message.guild.id)
+    const { leveling } = client.configs.get(message.guild.id)
     //
-    if (levelToogle === 'false') return
+    if (leveling.enabled === false) return
     //
     function getRandomXp(min, max) {
         min = Math.ceil(min);
